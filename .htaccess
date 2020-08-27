@@ -1,0 +1,5 @@
+#+PHPVersion
+#="php70"
+AddHandler x-httpd-php70 .php
+#-PHPVersion
+
