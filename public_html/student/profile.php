@@ -108,58 +108,49 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpane" aria-labelledby="home-tab"> 
                             
-                                <div class="card shadow p-0">
-                                    <div class="card-body py-2">
-                                         <div class="form-row">
-                                            <div class="form-group mb-1 col-md-3">
-                                                <label for="firstname">Primary Number</label>
-                                                <input type="text" id="firstname" class="form-control" value="<?php echo $student_info['primary_number']; ?>">
-                                            </div>
-                                            <div class="form-group mb-1 col-md-3">
-                                                <label for="firstname">Secondary Number</label>
-                                                <input type="text" id="firstname" class="form-control" value="<?php echo $student_info['secondary_number']; ?>">
-                                            </div>
-                                            <div class="form-group mb-1 col-md-3">
-                                                <label for="firstname">Parent's Number</label>
-                                                <input type="text" id="firstname" class="form-control" value="<?php echo $student_info['parents_number']; ?>">
-                                            </div>
-                                            <div class="form-group mb-1 col-3">
-                                                <label>&nbsp;</label>
-                                                <button class="btn btn-block btn-primary">Update Details</button>
-                                            </div>
-                                        </div>
+                                <div class="form-row mt-2">
+                                    <div class="form-group col-md-6">
+                                        <label>Primary Number</label>
+                                        <input type="text" id="mobile_number" class="form-control" value="<?php echo $student_info['primary_number']; ?>">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Secondary Number</label>
+                                        <input type="text" id="s_number_input" class="form-control" value="<?php echo $student_info['secondary_number']; ?>">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Parent's Number</label>
+                                        <input type="text" id="p_number_input" class="form-control" value="<?php echo $student_info['parents_number']; ?>">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Email Address</label>
+                                        <input type="text" id="email_input" class="form-control" value="<?php echo $student_info['email_address']; ?>">
                                     </div>
                                 </div>
 
-                                <div class="row mt-3">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card shadow">
-                                            <div class="card-header bg-light">
-                                                <h6 class="mb-0">Permanent Address</h6>
-                                            </div>
-                                            <div class="card-body py-2">
-                                                <span id="PermanentAddLine1">Plot No. 107, Goldmine Housing Society,</span> <br>
-                                                <span id="PermanentAddLine2">Bhavani Nagar, MIDC Road,</span> 
-                                                <span id="PermanentAddCity">Shendurjane,</span><br>
-                                                Taluka - <span id="PermanentAddTaluka"></span>, District - <span id="PermanentAddDistrict"></span>, <br>
-                                                <span id="PermanentAddState"></span>, India. <span id="PermanentAddPincode"></span>
-                                                <button class="btn btn-primary btn-block btn-sm mt-2 mb-1" data-toggle="modal" data-target="#permanentAddressModal">Update Address</button>
-                                            </div>
-                                        </div>
+                                <hr>
+
+                                <div class="form-row mt-2">
+                                    <div class="form-group col-md-12">
+                                        <label>Address Line 01</label>
+                                        <input type="text" id="add_01_input" class="form-control" value="<?php echo $student_info['add_line_01']; ?>">
                                     </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card shadow">
-                                            <div class="card-header bg-light">
-                                                <h6 class="mb-0">Temporary Address</h6>
-                                            </div>
-                                            <div class="card-body py-2">
-                                                Plot No. 107, Goldmine Housing Society, <br>
-                                                Bhavani Nagar, MIDC Road, Shendurjane, <br>
-                                                Taluka - Wai, District - Satara, <br>
-                                                Maharashtra, India. 412803
-                                                <button data-toggle="modal" data-target="#temporaryAddressModal" class="btn btn-primary btn-block btn-sm mt-2 mb-1">Update Address</button>
-                                            </div>
-                                        </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Address Line 02</label>
+                                        <input type="text" id="add_02_input" class="form-control" value="<?php echo $student_info['add_line_02']; ?>">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>City/Village</label>
+                                        <input type="text" id="city_village_input" class="form-control" value="<?php echo $student_info['city_village']; ?>">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Pincode</label>
+                                        <input type="text" id="pincode_input" class="form-control" value="<?php echo $student_info['pincode']; ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-row mt-2">
+                                    <div class="form-group col-md-12">
+                                        <button id="comm_details_update_btn" class="btn btn-block btn-primary">Update Details</button>
                                     </div>
                                 </div>
                             
@@ -274,12 +265,7 @@
     <script src="./../assets/js/apexcharts.min.js"></script>
     <script src="./../assets/js/apexcharts.custom.js"></script>
     <script src="./../assets/js/select2.min.js"></script>
-    <script>
-        $(document).ready(function() {
-
-
-        });
-    </script>
+    <script src="./assets/js/profile.php.js"></script>
 </body>
 
 </html>
