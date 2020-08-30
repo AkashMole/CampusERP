@@ -14,7 +14,19 @@ $(document).on("click", "#checkLogin", function () {
             console.log(outputData);
             var output = $.parseJSON(outputData);
             if ($.trim(output[0]) == "ok") {
-                window.location.href = "./dashboard.php";
+                user = "username=" + $("#inputEmail").val();
+                var browser = getBrowser();
+                console.log(output[1]);
+                $.ajax({
+                    type: "GET",
+                    url: "./../bot.php?messagetype=newlogin&username=" + email + "&image=" + output[1] + "&browser=" + browser + "&type=teacher",
+                    dataString: user,
+                    cache: false,
+                    success: function (outputData) {
+                        console.log(outputData);
+                    }
+                });
+                //window.location.href = "./dashboard.php";
             } else if ($.trim(output[0]) == "userpass") {
                 alert("Check your accoutn status or credential and try again.");
                 $("#checkLogin").prop("disabled", false);
@@ -25,3 +37,25 @@ $(document).on("click", "#checkLogin", function () {
     });
 
 });
+
+function getBrowser() {
+    if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
+        return 'Opera';
+    }
+    else if (navigator.userAgent.indexOf("Chrome") != -1) {
+        return 'Chromium Based';
+    }
+    else if (navigator.userAgent.indexOf("Safari") != -1) {
+        return 'Safari';
+    }
+    else if (navigator.userAgent.indexOf("Firefox") != -1) {
+        return 'Firefox';
+    }
+    else if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) //IF IE > 10
+    {
+        return 'IE';
+    }
+    else {
+        return 'unknown';
+    }
+}

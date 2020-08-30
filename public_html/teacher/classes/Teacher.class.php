@@ -12,14 +12,14 @@ class Teacher extends Dbh
             $sql = "SELECT * FROM `teacher_basic_info` WHERE `email_address` = ? AND `password` = ? ";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$email, $password]);
-            $teacherinfo = $stmt->fetch();
-            $teacher_id = $teacherinfo['teacher_id'];
+            $teacher_info = $stmt->fetch();
+            $teacher_id = $teacher_info['teacher_id'];
             if (strlen($teacher_id) !== 0) {
                 $sql = "UPDATE `teacher_basic_info` SET `last_login` = ? WHERE `teacher_id` = ? ";
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$logintime, $teacher_id]);
                 $_SESSION["teacher_id"] = $teacher_id;
-                echo json_encode(array("ok"));
+                echo json_encode(array("ok", $teacher_info['profile_path']));
             } else {
                 echo json_encode(array("userpass"));
             }
@@ -33,8 +33,8 @@ class Teacher extends Dbh
             $sql = "SELECT * FROM `teacher_basic_info` WHERE `teacher_id` = ? ";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$teacher_id]);
-            $teacherinfo = $stmt->fetch();
-            return $teacherinfo;
+            $teacher_info = $stmt->fetch();
+            return $teacher_info;
         } catch (Exception $e) {
             return $e->getMessage();
         }

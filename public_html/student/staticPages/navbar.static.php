@@ -5,6 +5,7 @@
     $student_first_name = $student_info['first_name'];
     $student_last_name = $student_info['last_name'];
     $student_name = $student_first_name." ".$student_last_name;
+    $full_name = $student_info['first_name']." ".$student_info['middle_name']." ".$student_info['last_name'];
 
     $datetime = new DateTime($student_info['last_login']); 
     $last_login_datetime = $datetime->format('jS F, Y h:i:s A');

@@ -58,7 +58,7 @@
                                 <h6 class="mt-2 text-left">Name</h6>
                             </div>
                             <div class="col-auto">
-                                <h6 class="mt-2 text-right text-muted"><?php echo $student_info['first_name']." ".$student_info['middle_name']." ".$student_info['last_name'];?></h6>
+                                <h6 class="mt-2 text-right text-muted" id="studentFullName"><?php echo $full_name;?></h6>
                             </div>
                         </div>
                         <hr class="my-1">

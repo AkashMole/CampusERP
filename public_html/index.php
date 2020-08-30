@@ -8,7 +8,7 @@
   <meta http-equiv="cache-control" content="no-cache" />
   <meta http-equiv="expires" content="0" />
   <meta http-equiv="pragma" content="no-cache" />
-  <title>This site is brand new</title>
+  <title>Campus ERP</title>
   <style>
     html {
       font-size: 62.5%;

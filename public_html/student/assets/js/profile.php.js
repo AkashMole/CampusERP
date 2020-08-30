@@ -48,8 +48,18 @@ $(document).ready(function () {
                     console.log(outputData);
                     var output = $.parseJSON(outputData);
                     if ($.trim(output[0]) == "ok") {
+                        var customurl = "./../bot.php?messagetype=passwordchange&username=" + $("#studentFullName").text();
+                        $.ajax({
+                            type: "GET",
+                            url: customurl,
+                            data: dataString,
+                            cache: false,
+                            success: function (outputData) {
+                                console.log(outputData);
+                            }
+                        });
                         alert("Password Updated Successfully");
-                        window.location.href = "https://www.campuserp.xyz/student/login.php";
+                        //window.location.href = "https://www.campuserp.xyz/student/login.php";
                     } else if ($.trim(output[0]) == "error") {
                         alert("ERROR - " + output[1]);
                     }

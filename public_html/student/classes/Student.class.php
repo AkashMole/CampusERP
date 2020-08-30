@@ -19,7 +19,8 @@ class Student extends Dbh
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$logintime, $student_id]);
                 $_SESSION["student_id"] = $student_id;
-                echo json_encode(array("ok"));
+
+                echo json_encode(array("ok", $student_info['profile_path']));
             } else {
                 echo json_encode(array("userpass"));
             }
