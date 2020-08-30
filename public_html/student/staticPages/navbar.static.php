@@ -1,6 +1,7 @@
 <?php
     date_default_timezone_set("Asia/Kolkata");
     $Student = new Student();
+    echo "123";
     $student_info = $Student->getStudentBasicInfo($student_id);
     $student_first_name = $student_info['first_name'];
     $student_last_name = $student_info['last_name'];

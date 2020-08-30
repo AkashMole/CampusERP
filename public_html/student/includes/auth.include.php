@@ -3,7 +3,6 @@
 include 'class-autoload.inc.php';
 
 session_start();
-
 if($_POST['type'] == "checkLogin"){
     $email = $_POST['email'];
     $password = $_POST['password'];

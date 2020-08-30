@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="./../assets/css/app-dark.css" id="darkTheme">
 </head>
 
-<body class="vertical dark collapsed ScrollStyle">
+<body class="vertical dark ScrollStyle">
     <div class="wrapper">
 
         <?php

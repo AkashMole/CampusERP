@@ -9,12 +9,11 @@ class Student extends Dbh
     public function checkStudent($email, $password, $logintime){
 
         try {
-            $sql = "SELECT * FROM `student_basic_info` WHERE `email_address` = ? AND `password` = ? AND `status_flag` = 'active' ";
+            $sql = "SELECT * FROM `student_basic_info` WHERE `email_address` = ? AND `password` = ? ";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$email, $password]);
             $student_info = $stmt->fetch();
             $student_id = $student_info['student_id'];
-
             if (strlen($student_id) !== 0) {
                 $sql = "UPDATE `student_basic_info` SET `last_login` = ? WHERE `student_id` = ? ";
                 $stmt = $this->connect()->prepare($sql);

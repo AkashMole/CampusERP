@@ -92,21 +92,16 @@
 
                     <div class="col-md-9">
                     
-                        
-
                         <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
                             <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Communcation Details</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#communication" role="tab" aria-controls="home" aria-selected="true">Communcation Details</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Educational Details</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Account Settings</a>
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#Settings" role="tab" aria-controls="contact" aria-selected="false">Account Settings</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpane" aria-labelledby="home-tab"> 
+                            <div class="tab-pane fade show active" id="communication" role="tabpane" aria-labelledby="communication-tab"> 
                             
                                 <div class="form-row mt-2">
                                     <div class="form-group col-md-6">
@@ -155,20 +150,26 @@
                                 </div>
                             
                             </div>
-                            <div class="tab-pane fade" id="profile" role="tabpane" aria-labelledby="profile-tab">
+                            <div class="tab-pane fade" id="Settings" role="tabpane" aria-labelledby="Settings-tab">
                                 <div class="form-row">
                                     <div class="form-group col-md-4 col-12">
-                                        <label>Title</label>
-                                        <input type="text" class="form-control">
+                                        <label>New Password</label>
+                                        <input id="pwdUpdateNew" type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-4 col-12">
+                                        <label>Old Password</label>
+                                        <input id="pwdUpdateOld" type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-4 col-12">
+                                        <label>Confirm Old Password</label>
+                                        <input id="pwdUpdateConfirm" type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <button id="updatePasswordBtn" class="btn btn-block btn-primary">Update Password</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="contact" role="tabpane" aria-labelledby="contact-tab">
-
-                            </div>
                         </div>
-
-
 
                     </div>
                 </div>

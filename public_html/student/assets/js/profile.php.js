@@ -32,4 +32,31 @@ $(document).ready(function () {
         });
     });
 
+    $(document).on("click","#updatePasswordBtn", function(){
+        var pwdUpdateConfirm = $("#pwdUpdateConfirm").val();
+        var pwdUpdateOld = $("#pwdUpdateOld").val();
+        var pwdUpdateNew = $("#pwdUpdateNew").val();
+
+        if (pwdUpdateOld.equals(pwdUpdateConfirm)){
+            var dataString = "type=updatePassword&password=" + pwdUpdateNew;
+            $.ajax({
+                type: "POST",
+                url: "./includes/profile.include.php",
+                data: dataString,
+                cache: false,
+                success: function (outputData) {
+                    console.log(outputData);
+                    var output = $.parseJSON(outputData);
+                    if ($.trim(output[0]) == "ok") {
+                        alert("Password Updated Successfully");
+                        window.location.href = "https://www.campuserp.xyz";
+                    } else if ($.trim(output[0]) == "error") {
+                        alert("ERROR - " + result[1]);
+                    }
+                }
+            });
+        }
+        
+    });
+
 });
