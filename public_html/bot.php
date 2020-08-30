@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $msg .= "URL: " . $payload->pull_request->html_url . "\n";
             break;
         case 'pull_request_review':
-            $msg .= "Pull request: '" . $payload->pull_request->title . "' was " . $payload->review->state . " by " . $payload->review->user->login . "\n";
+            $msg .= "Pull request-> '" . $payload->pull_request->title . "' was " . $payload->review->state . " by " . $payload->review->user->login . "\n";
             $msg .= "URL: " . $payload->pull_request->html_url . "\n";
             break;
         default:
