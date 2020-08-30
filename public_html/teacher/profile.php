@@ -2,8 +2,8 @@
     session_start();
     date_default_timezone_set("Asia/Calcutta");
     include './includes/class-autoload.inc.php';
-    if (isset($_SESSION['student_id'])) {
-        $student_id = $_SESSION['student_id'];
+    if (isset($_SESSION['teacher_id'])) {
+        $teacher_id = $_SESSION['teacher_id'];
     } else {
         header('location: ./login.php');
     }
@@ -50,7 +50,7 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-12 mx-auto mb-2">
-                                <img src="./assets/img/<?php echo $student_info['profile_path']; ?>" class="img-fluid rounded">
+                                <img src="./assets/img/<?php echo $teacher_info['profile_path']; ?>" class="img-fluid rounded">
                             </div>
                         </div>
                         <div class="row">
@@ -58,16 +58,7 @@
                                 <h6 class="mt-2 text-left">Name</h6>
                             </div>
                             <div class="col-auto">
-                                <h6 class="mt-2 text-right text-muted"><?php echo $student_info['first_name']." ".$student_info['middle_name']." ".$student_info['last_name'];?></h6>
-                            </div>
-                        </div>
-                        <hr class="my-1">
-                        <div class="row">
-                            <div class="col">
-                                <h6 class="mt-2 text-left">PRN</h6>
-                            </div>
-                            <div class="col-auto">
-                                <h6 class="mt-2 text-right text-muted"><?php echo $student_info['prn_number']; ?></h6>
+                                <h6 class="mt-2 text-right text-muted"><?php echo $teacher_info['first_name']." ".$teacher_info['middle_name']." ".$teacher_info['last_name'];?></h6>
                             </div>
                         </div>
                         <hr class="my-1">
@@ -85,7 +76,7 @@
                                 <h6 class="mt-2 text-left">Email</h6>
                             </div>
                             <div class="col-auto">
-                                <h6 class="mt-2 text-right text-muted"><?php echo $student_info['email_address']; ?></h6>
+                                <h6 class="mt-2 text-right text-muted"><?php echo $teacher_info['email_address']; ?></h6>
                             </div>
                         </div>
                     </div>
@@ -104,21 +95,17 @@
                             <div class="tab-pane fade show active" id="communication" role="tabpane" aria-labelledby="communication-tab"> 
                             
                                 <div class="form-row mt-2">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col">
                                         <label>Primary Number</label>
-                                        <input type="text" id="mobile_number" class="form-control" value="<?php echo $student_info['primary_number']; ?>">
+                                        <input type="text" id="mobile_number" class="form-control" value="<?php echo $teacher_info['primary_number']; ?>">
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col">
                                         <label>Secondary Number</label>
-                                        <input type="text" id="s_number_input" class="form-control" value="<?php echo $student_info['secondary_number']; ?>">
+                                        <input type="text" id="s_number_input" class="form-control" value="<?php echo $teacher_info['secondary_number']; ?>">
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Parent's Number</label>
-                                        <input type="text" id="p_number_input" class="form-control" value="<?php echo $student_info['parents_number']; ?>">
-                                    </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-5 col-12">
                                         <label>Email Address</label>
-                                        <input type="text" id="email_input" class="form-control" value="<?php echo $student_info['email_address']; ?>">
+                                        <input type="text" id="email_input" class="form-control" value="<?php echo $teacher_info['email_address']; ?>">
                                     </div>
                                 </div>
 
@@ -127,19 +114,19 @@
                                 <div class="form-row mt-2">
                                     <div class="form-group col-md-12">
                                         <label>Address Line 01</label>
-                                        <input type="text" id="add_01_input" class="form-control" value="<?php echo $student_info['add_line_01']; ?>">
+                                        <input type="text" id="add_01_input" class="form-control" value="<?php echo $teacher_info['add_line_01']; ?>">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Address Line 02</label>
-                                        <input type="text" id="add_02_input" class="form-control" value="<?php echo $student_info['add_line_02']; ?>">
+                                        <input type="text" id="add_02_input" class="form-control" value="<?php echo $teacher_info['add_line_02']; ?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>City/Village</label>
-                                        <input type="text" id="city_village_input" class="form-control" value="<?php echo $student_info['city_village']; ?>">
+                                        <input type="text" id="city_village_input" class="form-control" value="<?php echo $teacher_info['city_village']; ?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Pincode</label>
-                                        <input type="text" id="pincode_input" class="form-control" value="<?php echo $student_info['pincode']; ?>">
+                                        <input type="text" id="pincode_input" class="form-control" value="<?php echo $teacher_info['pincode']; ?>">
                                     </div>
                                 </div>
 

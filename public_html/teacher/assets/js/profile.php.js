@@ -3,15 +3,13 @@ $(document).ready(function () {
     $(document).on("click","#comm_details_update_btn", function(){
         var mobile_number = $("#mobile_number").val();
         var secondary_number = $("#s_number_input").val();
-        var parents_number = $("#p_number_input").val();
         var email = $("#email_input").val();
-
         var add01 = $("#add_01_input").val();
         var add02 = $("#add_02_input").val();
         var city = $("#city_village_input").val();
         var pincode = $("#pincode_input").val();
 
-        var dataString = "type=updateCommDetails&mobile_number=" + mobile_number + "&secondary_number=" + secondary_number + "&secondary_number=" + parents_number + "&parents_number=" + parents_number + "&email=" + email + "&add01=" + add01 + "&add02=" + add02 + "&city=" + city + "&pincode=" + pincode;
+        var dataString = "type=updateCommDetails&mobile_number=" + mobile_number + "&secondary_number=" + secondary_number + "&email=" + email + "&add01=" + add01 + "&add02=" + add02 + "&city=" + city + "&pincode=" + pincode;
 
         console.log(dataString);
 

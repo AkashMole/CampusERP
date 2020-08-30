@@ -40,4 +40,37 @@ class Student extends Dbh
         }
     }
 
+    public function updatePassword($student_id, $password, $old){
+        try {
+            $sql = "UPDATE `student_basic_info` SET `password` = $password WHERE `student_id` = $student_id AND `password` = $old ";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+            if($stmt->rowCount() > 0){
+                echo json_encode(array("ok"));
+            }else{
+                echo json_encode(array("error", "Could not update password"));
+            }
+        } catch (Exception $e) {
+            echo json_encode(array("error", $e->getMessage()));
+        }
+    }
+
+
+    public function updateDetails($student_id, $mobile_number, $secondary_number, $parents_number, $email, $add01, $add02, $city, $pincode){
+        try {
+            $sql = "UPDATE student_basic_info SET primary_number = ?, secondary_number = ?, parents_number = ?, email_address = ?, add_line_01 = ?, add_line_02 = ?, city_village = ?, pincode = ? WHERE student_id = ? ";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$mobile_number, $secondary_number, $parents_number, $email, $add01, $add02, $city, $pincode, $student_id]);
+            if($stmt->rowCount() > 0){
+                echo json_encode(array("ok"));
+            }else{
+                echo json_encode(array("error", "Could not update password"));
+            }
+        } catch (Exception $e) {
+            echo json_encode(array("error", $e->getMessage()));
+        }
+    }
+
+
+
 }
