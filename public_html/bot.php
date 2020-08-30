@@ -32,7 +32,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             // nothing
     }
 
-    send_msg($msg);
     send_msg($payload);
 }
 else {
