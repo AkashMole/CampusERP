@@ -33,6 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     send_msg($msg);
+    send_msg($payload);
 }
 else {
     // do nothing lol :)
