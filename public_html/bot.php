@@ -7,8 +7,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $payload = json_decode($_POST['payload']);
     $type_event = $_SERVER['HTTP_X_GITHUB_EVENT'];
 
-    $msg = "Event: $type_event\n";
-    $msg .= "Repository:  " . $payload->repository->name . "\n";
+    $msg = "Event -> $type_event\n";
+    $msg .= "Repository -> " . $payload->repository->name . "\n";
 
     switch($type_event) {
         case 'push':
