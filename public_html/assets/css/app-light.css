@@ -55,6 +55,23 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
+.ScrollStyle
+{
+  max-height: 5vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 1vw;
+}
+
+.is-table-row {
+  display: table;
+}
+.is-table-row [class*="col-"] {
+  float: none;
+  display: table-cell;
+  vertical-align: top;
+}
+
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
