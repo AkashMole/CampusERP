@@ -48,56 +48,43 @@
                 </div>
                 <div class="row">
                     <div class="col-md-9 col-12">
-                           <div class="card card-primary shadow mt-3">
-                            <div class="card-body">
-                                <div class="row mx-1">
-                                    <div class="col-12 px-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control text-center" placeholder="Search Books">
-                                        </div>
-                                    </div>
+                        <div class="card timeline card-primary shadow mt-3">
+                            <div class="card-header bg-light">
+                                <div class="form-group mb-0">
+                                    <input type="text" class="form-control text-center" placeholder="Search Books">
                                 </div>
-                                <div class="row mx-1 is-table-row">
-                                    <div class="col-md-3 col-6 p-1">
+                            </div>
+                            <div class="card-body" data-simplebar style="height:70vh; overflow-y: auto; overflow-x: hidden;">
+                                <div class="row mx-1">
+
+                                    <?php
+                                        $Library = new Library();
+                                        $books = $Library->getBooks();
+
+                                        foreach($books AS $book){
+
+                                       
+                                    ?>
+
+                                    <div class="col-md-3 col-6 p-1" style="max-height:30vh">
                                         <div class="card border-0">
                                             <div class="card-body p-1 text-center single-book">
-                                                <img src="https://markmanson.net/wp-content/uploads/2019/02/eif-3d-fits-shadow.jpg" class="img-fluid p-2">
                                                 <div class="face-one">
-                                                    <h6>Every Thing is Fucked - A Book about Hope</h6>
+                                                    <img src="<?php echo $book['profile_path']; ?>" class="img-fluid p-2">
+                                                    <h6><?php echo $book['name']; ?></h6>
                                                 </div>
                                                 <div class="face-two">
-                                                    <h6>Author - Mark Manson</h6>
+                                                    <img src="<?php echo $book['profile_path']; ?>" class="img-fluid p-2">
+                                                    <h6>Author - <?php echo $book['author']; ?></h6>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3 col-6 p-1">
-                                        <div class="card border-0">
-                                            <div class="card-body p-1 text-center single-book">
-                                                <img src="https://markmanson.net/wp-content/uploads/2019/02/eif-3d-fits-shadow.jpg" class="img-fluid p-2">
-                                                <div class="face-one">
-                                                    <h6>Every Thing is Fucked - A Book about Hope</h6>
-                                                </div>
-                                                <div class="face-two">
-                                                    <h6>Author - Mark Manson</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-6 p-1">
-                                        <div class="card border-0">
-                                            <div class="card-body p-1 text-center single-book">
-                                                <img src="https://markmanson.net/wp-content/uploads/2019/02/eif-3d-fits-shadow.jpg" class="img-fluid p-2">
-                                                <div class="face-one">
-                                                    <h6>Every Thing is Fucked - A Book about Hope</h6>
-                                                </div>
-                                                <div class="face-two">
-                                                    <h6>Author - Mark Manson</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    </div> 
+
+                                    <?php
+                                        }
+                                    ?>
+                                                                
                                 </div>
                             </div>
                         </div>

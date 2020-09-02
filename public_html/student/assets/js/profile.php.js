@@ -48,7 +48,7 @@ $(document).ready(function () {
                     console.log(outputData);
                     var output = $.parseJSON(outputData);
                     if ($.trim(output[0]) == "ok") {
-                        var customurl = "./../bot.php?messagetype=passwordchange&username=" + $("#studentFullName").text();
+                        var customurl = "./../bot.php?messagetype=passwordchange&username=Akash";
                         $.ajax({
                             type: "GET",
                             url: customurl,

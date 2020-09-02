@@ -27,9 +27,9 @@ if($_GET['messagetype'] == "passwordchange"){
 
     $apiToken = "1155014817:AAHX7Q2lTO0AdLd3QrNenlfw77Wn1PmvDGA";
 
-    $text = urlencode('Hello <b>'.$username.'</b><br><br> Your password has been chnaged.<br> <a href="http://campuserp.xyz/updatePassword.php">Click Here</a> to report this Incident.');
+    $text = urlencode('Hello '.$username.' Password updated.');
 
-    echo $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?chat_id=@erpUpdates&text=$text&parse_mode=html");
+    echo $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?chat_id=@erpUpdates&text=$text");
 }
 
 
