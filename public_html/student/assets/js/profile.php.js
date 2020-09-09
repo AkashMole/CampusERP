@@ -59,7 +59,7 @@ $(document).ready(function () {
                             }
                         });
                         alert("Password Updated Successfully");
-                        //window.location.href = "https://www.campuserp.xyz/student/login.php";
+                        window.location.href = "https://www.campuserp.xyz/student/login.php";
                     } else if ($.trim(output[0]) == "error") {
                         alert("ERROR - " + output[1]);
                     }

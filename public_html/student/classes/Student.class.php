@@ -14,13 +14,13 @@ class Student extends Dbh
             $stmt->execute([$email, $password]);
             $student_info = $stmt->fetch();
             $student_id = $student_info['student_id'];
+            $telegram_username = $student_info['telegram_username'];
             if (strlen($student_id) !== 0) {
                 $sql = "UPDATE `student_basic_info` SET `last_login` = ? WHERE `student_id` = ? ";
                 $stmt = $this->connect()->prepare($sql);
                 $stmt->execute([$logintime, $student_id]);
                 $_SESSION["student_id"] = $student_id;
-
-                echo json_encode(array("ok", $student_info['profile_path']));
+                echo json_encode(array("ok", $student_info['profile_path'], $telegram_username));
             } else {
                 echo json_encode(array("userpass"));
             }

@@ -17,7 +17,7 @@ $(document).on("click", "#checkLogin", function () {
                 var browser = getBrowser();
                 $.ajax({
                     type: "GET",
-                    url: "./../bot.php?messagetype=newlogin&username=" + email + "&image=" + output[1] + "&browser=" + browser + "&type=student",
+                    url: "./../bot.php?messagetype=newlogin&username=" + email + "&image=" + output[1] + "&browser=" + browser + "&type=student" + "&user=" + output[2],
                     dataString: user,
                     cache: false,
                     success: function (outputData) {

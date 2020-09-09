@@ -2,14 +2,11 @@
     session_start();
     date_default_timezone_set("Asia/Calcutta");
     include './includes/class-autoload.inc.php';
-    if (isset($_SESSION['student_id'])) {
+    if (isset($_SESSION['student_id']))
         $student_id = $_SESSION['student_id'];
-    } else {
+    else
         header('location: ./login.php');
-    }
-
     $ProfilePage = new ProfilePage();
-    
 ?>
 <!doctype html>
 <html lang="en">
@@ -30,12 +27,10 @@
 
 <body class="vertical dark ScrollStyle">
     <div class="wrapper">
-
         <?php
             include './staticPages/navbar.static.php';
             include './staticPages/sidebar.static.php';
         ?>
-
         <main role="main" class="main-content">
             <div class="container-fluid px-2">
                 <div class="row justify-content-center">
@@ -51,40 +46,28 @@
                         <div class="card timeline card-primary shadow mt-3">
                             <div class="card-header bg-light">
                                 <div class="form-group mb-0">
-                                    <input type="text" class="form-control text-center" placeholder="Search Books">
+                                    <input type="text" class="form-control text-center" id="searchBooks" placeholder="Search Books">
                                 </div>
                             </div>
-                            <div class="card-body" data-simplebar style="height:70vh; overflow-y: auto; overflow-x: hidden;">
-                                <div class="row mx-1">
-
+                            <div class="card-body" data-simplebar style="max-height:70vh; overflow-y: auto; overflow-x: hidden;">
+                                <div class="row mx-1" id="booksView">
                                     <?php
                                         $Library = new Library();
                                         $books = $Library->getBooks();
-
                                         foreach($books AS $book){
-
-                                       
                                     ?>
-
-                                    <div class="col-md-3 col-6 p-1" style="max-height:30vh">
+                                    <div class="col-md-3 col-6 p-1 singleBook" style="max-height:30vh" data-toggle="modal" data-target=".BookViewModal">
                                         <div class="card border-0">
                                             <div class="card-body p-1 text-center single-book">
-                                                <div class="face-one">
-                                                    <img src="<?php echo $book['profile_path']; ?>" class="img-fluid p-2">
-                                                    <h6><?php echo $book['name']; ?></h6>
-                                                </div>
-                                                <div class="face-two">
-                                                    <img src="<?php echo $book['profile_path']; ?>" class="img-fluid p-2">
-                                                    <h6>Author - <?php echo $book['author']; ?></h6>
-                                                </div>
+                                                <img src="<?php echo $book['profile_path']; ?>" class="img-fluid p-2">
+                                                <h6><?php echo $book['name']; ?></h6>
+                                                <h6 class="d-none"><?php echo $book['author']; ?></h6>
                                             </div>
                                         </div>
-                                    </div> 
-
+                                    </div>
                                     <?php
                                         }
                                     ?>
-                                                                
                                 </div>
                             </div>
                         </div>
@@ -93,6 +76,26 @@
             </div>
             <?php include './staticPages/modals.static.php'; ?>
         </main>
+
+        <div class="modal fade BookViewModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <script src="./../assets/js/jquery.min.js"></script>

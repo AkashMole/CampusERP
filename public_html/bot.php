@@ -5,6 +5,8 @@ if($_GET['messagetype'] == "newlogin"){
     $username = $_GET['username'];
     $browser = $_GET['browser'];
     $type = $_GET['type'];
+    $user = $_GET['user'];
+
     if($type == "student"){
         echo $image = "https://campuserp.xyz/student/assets/img/" . $_GET['image'];
     }else{
@@ -16,6 +18,7 @@ if($_GET['messagetype'] == "newlogin"){
     $caption = urlencode('New Login Detected...!'.PHP_EOL.''.PHP_EOL.'<b>Email</b> : <i>'.$username.'</i>'.PHP_EOL.'<b>Time</b> : <i>'.$time.'</i>'.PHP_EOL.'<b>Broswer</b> : <i>'. $browser.'</i>');
 
     echo $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendPhoto?chat_id=@erpUpdates&photo=$image&caption=$caption&parse_mode=html");
+    echo $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendPhoto?chat_id=$user&photo=$image&caption=$caption&parse_mode=html");
 }
 
 if($_GET['messagetype'] == "passwordchange"){
@@ -31,6 +34,3 @@ if($_GET['messagetype'] == "passwordchange"){
 
     echo $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?chat_id=@erpUpdates&text=$text");
 }
-
-
-
