@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-9 col-12">
+                    <div class="col-md-8 col-12">
                         <div class="card timeline card-primary shadow mt-3">
                             <div class="card-header bg-light">
                                 <div class="form-group mb-0">
@@ -56,12 +56,14 @@
                                         $books = $Library->getBooks();
                                         foreach($books AS $book){
                                     ?>
-                                    <div class="col-md-3 col-6 p-1 singleBook" style="max-height:30vh" data-toggle="modal" data-target=".BookViewModal">
+                                    <div class="col-md-3 col-6 p-1 singleBook" style="max-height:30vh">
                                         <div class="card border-0">
                                             <div class="card-body p-1 text-center single-book">
                                                 <img src="<?php echo $book['profile_path']; ?>" class="img-fluid p-2">
                                                 <h6><?php echo $book['name']; ?></h6>
                                                 <h6 class="d-none"><?php echo $book['author']; ?></h6>
+                                                <h6 class="d-none"><?php echo $book['publication']; ?></h6>
+                                                <span class="d-none bookid"><?php echo $book['book_id']; ?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -72,26 +74,85 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-4 col-12">
+                        <div class="card timeline card-primary shadow mt-3">
+                            <div class="card-header bg-light">
+                                <strong class="card-title">Rented Books</strong>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="https://markmanson.net/wp-content/uploads/2019/02/eif-3d-fits-shadow.jpg" class="img-fluid">
+                                    </div>
+                                    <div class="col-8">
+                                        <h6>Book Title</h6>
+                                        <h6>Issue Date</h6>
+                                        <h6>Return Date</h6>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="https://markmanson.net/wp-content/uploads/2019/02/eif-3d-fits-shadow.jpg" class="img-fluid">
+                                    </div>
+                                    <div class="col-8">
+                                        <h6>Book Title</h6>
+                                        <h6>Issue Date</h6>
+                                        <h6>Return Date</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <?php include './staticPages/modals.static.php'; ?>
         </main>
 
         <div class="modal fade BookViewModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                        <h5 class="modal-title modalBookTitle">Book Name</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <div class="col-md-3 mx-auto" id="modalLoadingView">
+                                <img src="./../assets/img/loading.gif" class="img-fluid">
+                        </div>
+                        <div id="modalBookView">
+                            <div class="row">
+                                <div class="col-md-3 col-12">
+                                    <img id="modalBookImage" src="" class="img-fluid">
+                                    <h6 class="text-center">Available <span id="modalBookAvailable"></span> out of <span id="modalBookTotal"></span></h6>
+                                    <hr>
+                                    <h6>Author : <span id="modalBookAuthor"></span></h6>
+                                    <h6>Publication : <span id="modalBookPublication"></span></h6>
+                                </div>
+                                <div class="col-md-9 col-12">
+                                    <div class="row">
+                                        <div class="col-12 col-md-4">
+                                            <div class="card bg-light">
+                                                <div class="card-body p-2">
+                                                    <div class="row">
+                                                        <div class="col-md-4 my-auto">
+                                                            <img src="./assets/img/<?php echo $student_info['profile_path']; ?>" class="img-fluid rounded-circle">
+                                                        </div>
+                                                        <div class="col-md-8 px-1">
+                                                            <strong>Akash Mole</strong><br>
+                                                            Issue - 11/09/2020<br>
+                                                            Return - 21/09/2020
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
