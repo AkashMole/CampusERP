@@ -26,7 +26,7 @@ $(document).on("click", "#checkLogin", function () {
                         console.log(outputData);
                     }
                 });
-                //window.location.href = "./dashboard.php";
+                window.location.href = "./dashboard.php";
             } else if ($.trim(output[0]) == "userpass") {
                 alert("Check your accoutn status or credential and try again.");
                 $("#checkLogin").prop("disabled", false);

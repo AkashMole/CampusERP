@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    $("#navbarBtn").trigger("click");
+
     $("#searchBooks").on("keyup", function () {
         var value = $(this).val().toLowerCase();
         $("#booksView .singleBook").filter(function () {
