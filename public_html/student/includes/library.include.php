@@ -19,8 +19,19 @@ if($_POST['type'] == "getBookDetails"){
     $author = $bookData['author'];
     $total = $bookData['total'];
     $available = $bookData['available'];
-    $profile_path = $bookData['profile_path'];
     $publication = $bookData['publication'];
 
-    echo json_encode(array("Result"=>"ok", "name"=>$name, "description"=>$description, "author"=>$author, "total"=>$total, "available"=>$available, "profile_path"=>$profile_path, "publication"=>$publication));
+    echo json_encode(array("Result"=>"ok", "name"=>$name, "description"=>$description, "author"=>$author, "total"=>$total, "available"=>$available, "publication"=>$publication));
+}
+
+if($_POST['type'] == "reserveBook"){
+    $book_id = $_POST['book_id'];
+    $student_id = $_SESSION['student_id'];
+
+    $Student = new Student();
+    $StudentInfo = $Student->getStudentBasicInfo($student_id);
+    $user_id = $StudentInfo['prn_number'];
+
+    $Library = new Library();
+    echo $reserveBook = $Library->reserveBook($book_id, $user_id);
 }

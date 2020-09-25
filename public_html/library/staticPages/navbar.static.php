@@ -1,0 +1,61 @@
+<?php
+    date_default_timezone_set("Asia/Kolkata");
+    $Teacher = new Teacher();
+    $teacher_info = $Teacher->getStudentBasicInfo($teacher_id);
+    $teacherfirst_name = $teacher_info['first_name'];
+    $teacherlast_name = $teacher_info['last_name'];
+    $teachername = $teacherfirst_name." ".$teacherlast_name;
+
+    $datetime = new DateTime($teacher_info['last_login']); 
+    $last_login_datetime = $datetime->format('jS F, Y h:i:s A');
+
+    $dob = new DateTime($teacher_info['dob']); 
+    $dob = $dob->format('jS F, Y');
+
+    $Hour = date('G');
+    $msg = "Greetings";
+    if ( $Hour >= 5 && $Hour < 12 ) {
+        $msg = "Good Morning, " . $teacherfirst_name;
+    } else if ( $Hour >= 12 && $Hour < 18 ) {
+        $msg = "Good Afternoon, " . $teacherfirst_name;
+    } else if ( $Hour >= 18 || $Hour < 11 ) {
+        $msg = "Good Evening, " . $teacherfirst_name;
+    } else if ( $Hour >= 11 || $Hour < 5 ) {
+        $msg = "Working Late ! " . $teacherfirst_name;
+    }
+
+?>
+<nav class="topnav navbar navbar-light">
+    <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+        <i class="fe fe-menu navbar-toggler-icon"></i>
+    </button>
+    <form class="form-inline mr-auto searchform text-muted">
+        <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search" placeholder="Type something..." aria-label="Search">
+    </form>
+    <ul class="nav">
+        <li class="nav-item my-auto">
+            <a class="nav-link text-muted" href="#" id="modeSwitcher" data-mode="dark">
+                <i class="fe fe-sun fe-16"></i>
+            </a>
+        </li>
+        <li class="nav-item my-auto">
+            <a class="nav-link text-muted" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+                <span class="fe fe-grid fe-16"></span>
+            </a>
+        </li>
+        <li class="nav-item my-auto nav-notif">
+            <a class="nav-link text-muted" href="./#" data-toggle="modal" data-target=".modal-notif">
+                <span class="fe fe-bell fe-16"></span>
+                <span class="dot dot-md bg-success"></span>
+            </a>
+        </li>
+        <li class="nav-item my-auto dropdown">
+            <a class="nav-link text-muted pr-0">
+                <span class="avatar avatar-md mt-2">
+                    <img src="./assets/img/<?php echo $teacher_info['profile_path']; ?>" alt="..." class="avatar-img rounded-circle mr-1">
+                </span>
+                <span class="h6"><?php echo $teachername; ?></span>
+            </a>
+        </li>
+    </ul>
+</nav>

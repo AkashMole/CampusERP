@@ -2,11 +2,14 @@
     session_start();
     date_default_timezone_set("Asia/Calcutta");
     include './includes/class-autoload.inc.php';
-    if (isset($_SESSION['student_id']))
-        $student_id = $_SESSION['student_id'];
-    else
+    if (isset($_SESSION['teacher_id'])) {
+        $teacher_id = $_SESSION['teacher_id'];
+    } else {
         header('location: ./login.php');
+    }
+
     $ProfilePage = new ProfilePage();
+    
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,8 +19,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="../assets/img/logo.ico">
     <title>Campus ERP - Student Panel</title>
+    <link rel="stylesheet" href="./../assets/css/simplebar.css">
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./../assets/css/feather.css">
+    <link rel="stylesheet" href="./../assets/css/select2.css">
+    <link rel="stylesheet" href="./../assets/css/daterangepicker.css">
     <link rel="stylesheet" href="./../assets/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="./../assets/css/app-light.css" id="lightTheme" disabled>
     <link rel="stylesheet" href="./../assets/css/app-dark.css" id="darkTheme">
@@ -72,7 +78,7 @@
                                                 <td>0 out of 50</td>
                                                 <td>10</td>
                                                 <td>
-                                                    <button class="btn btn-primary btn-sm bookReserveBtn">Reserve</button>
+                                                    <button class="btn btn-primary btn-sm">Reserve</button>
                                                     <button class="btn btn-secondary btn-sm bookMoreDetailsBtn">More</button>
                                                 </td>
                                             </tr>
@@ -267,9 +273,17 @@
     <script src="./../assets/js/popper.min.js"></script>
     <script src="./../assets/js/moment.min.js"></script>
     <script src="./../assets/js/bootstrap.min.js"></script>
+    <script src="./../assets/js/simplebar.min.js"></script>
+    <script src='./../assets/js/daterangepicker.js'></script>
+    <script src='./../assets/js/jquery.stickOnScroll.js'></script>
     <script src="./../assets/js/tinycolor-min.js"></script>
     <script src="./../assets/js/config.js"></script>
     <script src="./../assets/js/apps.js"></script>
+    <script src="./../assets/js/gauge.min.js"></script>
+    <script src="./../assets/js/jquery.sparkline.min.js"></script>
+    <script src="./../assets/js/apexcharts.min.js"></script>
+    <script src="./../assets/js/apexcharts.custom.js"></script>
+    <script src="./../assets/js/select2.min.js"></script>
     <script src="./assets/js/library.php.js"></script>
     <script src='./../assets/js/jquery.dataTables.min.js'></script>
     <script src='./../assets/js/dataTables.bootstrap4.min.js'></script>

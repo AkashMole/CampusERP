@@ -1,6 +1,6 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $("#oldBooksViewBtn").on("click", function(e){
+    $("#oldBooksViewBtn").on("click", function (e) {
         $(".oldBooksViewModel").modal("show");
     });
 
@@ -8,7 +8,7 @@ $(document).ready(function(){
         $(".myBooksViewModel").modal("show");
     });
 
-    $(".bookMoreDetailsBtn").on("click", function(e){
+    $(".bookMoreDetailsBtn").on("click", function (e) {
         $(".BookViewModal").modal("show");
         $("#modalLoadingView").removeClass("d-none");
         $("#modalBookView").addClass("d-none");
@@ -36,29 +36,6 @@ $(document).ready(function(){
                     $("#modalBookView").removeClass("d-none");
                 } else if ($.trim(output[0]) == "error") {
                     alert("ERROR - " + output[1]);
-                }
-            }
-        });
-
-    });
-
-
-    $(".bookReserveBtn").on("click", function(e){
-        console.log("Start");
-        var book_id = $(e.target).closest('.bookRow').find(".bookid").html();
-        var dataString = "type=reserveBook&book_id=" + book_id;
-        $.ajax({
-            type: "POST",
-            url: "./includes/library.include.php",
-            data: dataString,
-            cache: false,
-            success: function (outputData) {
-                console.log(outputData);
-                
-                if (outputData == "ok") {
-                    alert("OK");
-                } else if (outputData == "error") {
-                    alert("ERROR");
                 }
             }
         });

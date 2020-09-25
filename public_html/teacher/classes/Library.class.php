@@ -28,21 +28,6 @@ class Library extends Dbh
             return $e->getMessage();
         }
     }
-
-    public function reserveBook($book_id, $user_id){
-        try {
-            $sql = "INSERT INTO `book_reservation_info` (`user_id`, `book_id`) VALUES (?,?);";
-            $stmt = $this->connect()->prepare($sql);
-            
-            if($stmt->execute([$user_id, $book_id]))
-                echo "ok";
-            else
-                echo "error";
-            
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }
     
 
 }

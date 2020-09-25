@@ -15,10 +15,10 @@ if($_GET['messagetype'] == "newlogin"){
     date_default_timezone_set("Asia/Calcutta");
     $time = date("jS F, Y h:i:s A");
     $apiToken = "1155014817:AAHX7Q2lTO0AdLd3QrNenlfw77Wn1PmvDGA";
-    $caption = urlencode('New Login Detected...!'.PHP_EOL.''.PHP_EOL.'<b>Email</b> : <i>'.$username.'</i>'.PHP_EOL.'<b>Time</b> : <i>'.$time.'</i>'.PHP_EOL.'<b>Broswer</b> : <i>'. $browser.'</i>');
+    $caption = urlencode('New Login Detected...!'.PHP_EOL.'<b>Email</b> : <i>'.$username.'</i>'.PHP_EOL.'<b>Time</b> : <i>'.$time.'</i>'.PHP_EOL.'<b>Broswer</b> : <i>'. $browser.'</i>');
 
-    echo $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendPhoto?chat_id=@erpUpdates&photo=$image&caption=$caption&parse_mode=html");
-    echo $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendPhoto?chat_id=$user&photo=$image&caption=$caption&parse_mode=html");
+    echo $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?chat_id=@erpUpdates&text=$caption&parse_mode=html");
+    echo $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?chat_id=$user&text=$caption&parse_mode=html");
 }
 
 if($_GET['messagetype'] == "passwordchange"){

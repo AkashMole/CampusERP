@@ -49,6 +49,7 @@
   <h1>Site Under Construction</h1>
   <h1 class="mt-1"><a href="./student/login.php">Student Panel</a></h1>
   <h1 class="mt-1"><a href="./teacher/login.php">Teacher Panel</a></h1>
+  <h1 class="mt-1"><a href="./library/login.php">Library Panel</a></h1>
   <h1 class="mt-1"><a href="./test.php">Test Page</a></h1>
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
