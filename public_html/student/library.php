@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="./../assets/css/app-dark.css" id="darkTheme">
 </head>
 
-<body class="vertical dark ScrollStyle collapsed">
+<body class="vertical dark ScrollStyle">
     <div class="wrapper">
         <?php
             include './staticPages/navbar.static.php';

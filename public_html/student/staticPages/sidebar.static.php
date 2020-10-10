@@ -33,6 +33,12 @@
                     <span class="ml-3 item-text">Online Library</span>
                 </a>
             </li>
+            <li class="nav-item w-100">
+                <a class="nav-link" href="./exam_mcq.php">
+                    <i class="fe fe-user fe-16"></i>
+                    <span class="ml-3 item-text">MCQ Exam</span>
+                </a>
+            </li>
         </ul>
         <p class="text-muted nav-heading mt-2 mb-1">
             <span>Account Settings</span>

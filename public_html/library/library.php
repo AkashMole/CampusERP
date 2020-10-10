@@ -158,7 +158,7 @@
                             </div>
                             <div class="tab-pane fade show" id="InventoryTab" role="tabpane"> 
                             
-                                 <div class="card">
+                                <div class="card">
                                     <div class="card-body">
                                         InventoryTab
                                     </div>
@@ -167,7 +167,7 @@
                             </div>
                             <div class="tab-pane fade show" id="SettingsTab" role="tabpane"> 
                             
-                                 <div class="card">
+                                <div class="card">
                                     <div class="card-body">
                                         SettingsTab
                                     </div>
@@ -176,7 +176,7 @@
                             </div>
                             <div class="tab-pane fade show" id="CollectionTab" role="tabpane"> 
                             
-                                 <div class="card">
+                                <div class="card">
                                     <div class="card-body">
                                         CollectionTab
                                     </div>

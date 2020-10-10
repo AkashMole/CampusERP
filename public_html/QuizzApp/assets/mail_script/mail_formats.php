@@ -485,7 +485,7 @@ function newExam($subject, $student_name,$student_last_name, $student_email_id, 
                                                 style="background: #4458EB; border-radius: 4px;">
                                                 <tr>
                                                     <td align="center" valign="top">
-                                                        <a href="https://msgbuddy.com/QuizzApp" target="_blank" style="display: block; border: 1px solid #4458EB; border-radius:
+                                                        <a href="https://campuserp.xyz/QuizzApp" target="_blank" style="display: block; border: 1px solid #4458EB; border-radius:
                                                             4px; padding: 12px 23px; font-family: Source Sans Pro, Arial,
                                                             Verdana, Tahoma, Geneva, sans-serif; color: #ffffff; font-size:
                                                             20px; line-height: 30px; text-decoration: none; white-space:
@@ -848,10 +848,8 @@ function newAccount($greetings, $fname, $email, $username, $password, $sender_em
 
     $mailContent = '
 		
-
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <html>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>QuizzApp</title>
@@ -936,7 +934,6 @@ function newAccount($greetings, $fname, $email, $username, $password, $sender_em
             }
         </style>
     </head>
-
     <body style="margin: 0; padding: 0;">
 
         <table cellpadding="0" cellspacing="0" border="0" width="100%"
@@ -1064,17 +1061,14 @@ function newAccount($greetings, $fname, $email, $username, $password, $sender_em
             </tr>
         </table>
     </body>
-
     </html>
-
-
 	';
 
     $mail->Body = $mailContent;
     if (!$mail->send()) {
         echo 'Mailer Error: ' . $mail->ErrorInfo;
     } else {
-        
+        echo "<br>Mail sent to - " . $email;
     }
 
 

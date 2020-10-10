@@ -7,7 +7,7 @@ session_start();
 date_default_timezone_set("Asia/Kolkata");
 
 $filepath = realpath(dirname(__FILE__));
-require_once($filepath . "/dbh.class.php");
+require_once("../classes/Dbh.class.php");
 
 class sendMail extends Dbh
 {
@@ -16,7 +16,7 @@ class sendMail extends Dbh
             $exam_id = $_GET['exam_id'];
             echo "Mail Output";
 
-            $sql = "SELECT * FROM `student_info` WHERE student_id = 4";
+            $sql = "SELECT * FROM `student_info` WHERE student_id = 1";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute();
             $Students = $stmt->fetchAll();
@@ -31,7 +31,28 @@ class sendMail extends Dbh
 
         }
     }
+    function newUser(){
+        if($_GET['type'] == "newUser"){
+            echo "Mail Output";
+
+            $sql = "SELECT * FROM `student_info` WHERE student_id > 200";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+            $Students = $stmt->fetchAll();
+
+            foreach ($Students as $Student) {
+                if($Student['student_email'] != null){
+                    echo $output = newAccount("Greetings ", $Student['student_first_name'], $Student['student_email'], $Student['student_username'], $Student['student_password'],"quizzapp@campuserp.xyz", "Qweasz@11");
+                    echo "<br>";
+                }else{
+                    echo "Email not Sent to ----- ".$Student['student_email'];
+                }
+            }
+
+        }
+    }
 }
 
 $obj = new sendMail();
-$obj->sendNewExam();
+//$obj->sendNewExam();
+$obj->newUser();
