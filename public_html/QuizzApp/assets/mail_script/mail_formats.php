@@ -283,7 +283,7 @@ function sendCredentials($student_name, $student_user_name, $student_password, $
     }
 }
 
-function newExam($subject, $student_name,$student_last_name, $student_email_id, $sender_email, $sender_password, $exam_name, $subject_name, $exam_duration, $date)
+function newExam($subject, $student_name, $student_email_id, $sender_email, $sender_password, $exam_name, $subject_name, $exam_duration, $date)
 {
     echo "<br>Sending mail:- <br>";
     $mail = new PHPMailer;
@@ -296,7 +296,7 @@ function newExam($subject, $student_name,$student_last_name, $student_email_id, 
     $mail->Port = 587;
     $mail->setFrom($sender_email, "QuizzApp Alerts");
     $mail->addReplyTo($sender_email, "CRM @ QuizzApp");
-    $mail->addAddress($student_email_id, $student_name.' '.$student_last_name.' | QuizzApp Student');
+    $mail->addAddress($student_email_id, $student_name);
     $mail->Subject = $subject;
     $mail->isHTML(true);
 
@@ -573,7 +573,7 @@ function newExam($subject, $student_name,$student_last_name, $student_email_id, 
     if (!$mail->send()) {
         echo 'Mailer Error: ' . $mail->ErrorInfo;
     } else {
-        echo 'Message has been sent to '. $student_name .' @' . $date;
+        echo 'Message has been sent to -> ' . $student_email_id;
     }
 }
 

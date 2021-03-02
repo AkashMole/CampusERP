@@ -45,14 +45,14 @@
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-3 col-12">
+                    <div class="col-md-4 col-12">
                         <div class="card shadow">
                             <div class="card-body text-center">
                                 <a href="./exam.php" class="mb-0 h5"><i class="fe fe-user fe-16"></i> Exam Center</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-12">
+                    <div class="col-md-4 col-12">
                         <div class="card shadow">
                             <div class="card-body">
                                 <div class="row">
@@ -66,21 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-12">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-4">
-                                        icon
-                                    </div>
-                                    <div class="col-8">
-                                        Menu 01
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-12">
+                    <div class="col-md-4 col-12">
                         <div class="card shadow">
                             <div class="card-body">
                                 <div class="row">

@@ -46,10 +46,6 @@ session_destroy();
                                             Login
                                         </button>
                                     </div>
-
-                                    <div class="text-center">
-                                        <a href="./Register.php">Register Now !</a>
-                                    </div>
                                 </div>
                                 <div id="loader" class="text-center">
                                     <img src="./assets/img/final/static/spinner-primary.svg" alt="Spinner" class="img-fluid" style="width:100px;">

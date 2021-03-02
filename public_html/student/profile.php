@@ -43,7 +43,7 @@
                         <h1 class="h4 page-title"><?php echo $msg; ?>.....</h1>
                     </div>
                     <div class="col text-right d-none d-md-block">
-                        <h1 class="h6 page-title">Last Login : <?php echo $last_login_datetime; ?></h1>
+                        <h1 class="h6 page-title">Current Login : <?php echo $last_login_datetime; ?></h1>
                     </div>
                 </div>
                 <div class="row mt-3">
